@@ -4,9 +4,9 @@ return [
 
     'menu' => [
         'home'     => ['title' => 'Home', 'url' => 'home'],
-        'users'    => ['title' => 'Usuarios', 'url' => 'users'],
+        'users'    => ['title' => 'Users', 'url' => 'users'],
         'register' => [
-            'title' => 'Registro',
+            'title' => 'Register',
             'url' => 'auth/register',
             'callback' => function () { return Auth::guest(); }
         ]
