@@ -1,49 +1,31 @@
 @extends('layout')
 
 @section('content')
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Register</div>
-                    <div class="panel-body">
-                        @if (count($errors) > 0)
-                            <div class="alert alert-danger">
-                                <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h1>@trans('auth.register_title')</h1>
 
-                        {!! Form::model(new App\User(), [
-                            'url' => '/auth/register',
-                            'role' => 'form',
-                            'method' => 'POST'
-                        ]) !!}
+        {!! Alert::render() !!}
 
-                            {!! Field::text('name') !!}
-                            {!! Field::email('email') !!}
-                            {!! Field::password('password') !!}
-                            {!! Field::password('password_confirm', ['label' => 'Confirm your password']) !!}
-                            {!! Field::radios('gender', null, 'm', ['inline' => true]) !!}
-                            {!! Field::select('profession_id') !!}
-                            {!! Field::checkboxes('interests', null, null, ['inline' => true]) !!}
+        {!! Form::open([
+            'url' => '/auth/register',
+            'role' => 'form',
+            'method' => 'POST'
+        ]) !!}
 
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        Register
-                                    </button>
-                                </div>
-                            </div>
+            {!! Field::text('name') !!}
+            {!! Field::email('email') !!}
+            {!! Field::password('password') !!}
+            {!! Field::password('password_confirm', ['label' => 'Confirm your password']) !!}
+            {!! Field::radios('gender', null, 'm', ['inline' => true]) !!}
+            {!! Field::select('profession_id') !!}
+            {!! Field::checkboxes('interests', null, null, ['inline' => true]) !!}
 
-                        {!! Form::close() !!}
-                    </div>
-                </div>
-            </div>
-        </div>
+            <button type="submit" class="btn btn-primary">
+                @trans('auth.register_action')
+            </button>
+
+        {!! Form::close() !!}
     </div>
+</div>
 @endsection

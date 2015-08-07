@@ -1,51 +1,21 @@
 @extends('layout')
 
 @section('content')
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Reset Password</div>
-                    <div class="panel-body">
-                        @if (session('status'))
-                            <div class="alert alert-success">
-                                {{ session('status') }}
-                            </div>
-                        @endif
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h1>@trans('auth.reminder_title')</h1>
 
-                        @if (count($errors) > 0)
-                            <div class="alert alert-danger">
-                                <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
+        {!! Alert::render() !!}
 
-                        <form class="form-horizontal" role="form" method="POST" action="/password/email">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        {!! Form::open(['url' => 'password/email', 'role' => 'form', 'method' => 'POST']) !!}
 
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">E-Mail Address</label>
+            {!! Field::email('email') !!}
 
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" name="email" value="{{ old('email') }}">
-                                </div>
-                            </div>
+            <button type="submit" class="btn btn-primary">
+                @trans('auth.reminder_action')
+            </button>
 
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        Send Password Reset Link
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {!! Form::close() !!}
     </div>
+</div>
 @endsection
