@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
-        <h1>@trans('auth.register_title')</h1>
+        <h1>@lang('auth.register_title')</h1>
 
         {!! Alert::render() !!}
 
