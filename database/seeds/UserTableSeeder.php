@@ -13,7 +13,6 @@ class UserTableSeeder extends Seeder
     {
         factory(App\User::class)->create([
             'name'           => 'Duilio',
-            'username'       => 'sileence',
             'email'          => 'admin@styde.net',
             'gender'         => 'm',
             'profession_id'  => 1,
