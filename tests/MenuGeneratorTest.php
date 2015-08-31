@@ -1,7 +1,6 @@
 <?php
 
 use Mockery as m;
-use Styde\Html\Facades\Menu;
 
 class MenuGeneratorTest extends TestCase
 {
@@ -73,6 +72,40 @@ class MenuGeneratorTest extends TestCase
         );
     }
 
+    function test_checks_for_access_using_the_access_handler_and_the_gate()
+    {
+        Auth::loginUsingId(1);
+
+        Gate::define('update-post', function ($user, Post $post) {
+            return $post->id === 1;
+        });
+
+        Gate::define('delete-post', function ($user) {
+            return false;
+        });
+
+        // Having
+        $items = array(
+            'view-post' => [
+            ],
+            'edit-post' => [
+                'allows' => ['update-post', ':post']
+            ],
+            'review-post' => [
+                'denies' => ['update-post', ':post']
+            ],
+            'delete-post' => [
+                'allows' => 'delete-post'
+            ]
+        );
+
+        // Expect
+        $this->assertTemplate(
+            'menus/access-handler',
+            Menu::make($items)->setParam('post', new Post(1))->render()
+        );
+    }
+
     function test_generates_submenus()
     {
         // Having
@@ -93,6 +126,17 @@ class MenuGeneratorTest extends TestCase
             'menus/submenu',
             Menu::make($items)->render()
         );
+    }
+
+}
+
+class Post {
+
+    public $id;
+
+    public function __construct($id)
+    {
+        $this->id = $id;
     }
 
 }
