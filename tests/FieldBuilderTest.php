@@ -38,11 +38,35 @@ class FieldBuilderTest extends TestCase
         );
     }
 
+    public function test_adds_an_empty_false_option_select_field()
+    {
+        $this->assertTemplate(
+            'fields/select_false',
+            Field::select('gender', ['m' => 'Male', 'f' => 'Female'], ['empty' => false])
+        );
+    }
+
     public function test_adds_an_empty_option_to_select_fields()
     {
         $this->assertTemplate(
             'fields/select_empty',
             Field::select('gender', ['m' => 'Male', 'f' => 'Female'], ['empty' => 'Select gender'])
+        );
+    }
+
+    public function test_adds_a_multiple_option_to_select_field()
+    {
+        $this->assertTemplate(
+            'fields/select_multiple',
+            Field::select('fruits', ['1' => 'Apple', '2' => 'Banana', '3' => 'Watermelon'], null, ['multiple', 'empty' => false])
+        );
+    }
+    
+    public function test_adds_a_multiple_option_without_default_to_select_field()
+    {
+        $this->assertTemplate(
+            'fields/select_multiple',
+            Field::select('fruits', ['1' => 'Apple', '2' => 'Banana', '3' => 'Watermelon'], ['multiple', 'empty' => false])
         );
     }
 
