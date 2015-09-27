@@ -7,7 +7,7 @@
 
         {!! Alert::render() !!}
 
-        {!! Form::open([
+        {!! Form::model(new App\User, [
             'url' => '/auth/register',
             'role' => 'form',
             'method' => 'POST'
