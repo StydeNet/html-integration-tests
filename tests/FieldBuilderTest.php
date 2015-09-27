@@ -60,6 +60,26 @@ class FieldBuilderTest extends TestCase
         );
     }
 
+    public function test_generates_a_multiple_select_field()
+    {
+        $options = [
+            'php'     => 'PHP',
+            'laravel' => 'Laravel',
+            'symfony' => 'Symfony',
+            'ruby'    => 'Ruby on Rails'
+        ];
+
+        $this->assertTemplate(
+            'fields/select_multiple',
+            Field::select('tags', $options, ['php', 'laravel'], ['multiple'])
+        );
+
+        $this->assertTemplate(
+            'fields/select_multiple',
+            Field::selectMultiple('tags', $options, ['php', 'laravel'])
+        );
+    }
+
     public function test_takes_select_options_from_the_model()
     {
         // Having
