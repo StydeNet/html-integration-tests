@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Schema\Blueprint;
@@ -25,6 +26,6 @@ class CreateInterestsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('interests');
     }
 }
