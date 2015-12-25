@@ -6,7 +6,19 @@ php:
   - 5.6
   - 7.0
 
+env:
+  global:
+    -DB_DATABASE=components_html
+    -DB_USERNAME=travis
+    -DB_PASSWORD=
+
 sudo: false
+
+services:
+  - mysql
+
+before_script:
+  - mysql -e 'create database components_html;'
 
 install:
   composer install
