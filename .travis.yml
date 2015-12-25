@@ -9,6 +9,6 @@ php:
 sudo: false
 
 install:
-  composer install --no-interaction --prefer-source; fi
+  composer install
 
 script: vendor/bin/phpunit
