@@ -19,6 +19,7 @@ services:
 
 before_script:
   - mysql -e 'create database components_html;'
+  - php artisan migrate --seed --no-interaction -vvv
 
 install:
   composer install
