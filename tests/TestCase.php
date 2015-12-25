@@ -58,6 +58,6 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
 
     protected function removeWhitespaces($string)
     {
-        return preg_replace('/\s+/', ' ', $string);
+        return trim(str_replace('> <', '><', preg_replace('/\s+/', ' ', $string)));
     }
 }
