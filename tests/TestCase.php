@@ -10,6 +10,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
      * @var string
      */
     protected $baseUrl = 'http://forms.laravel';
+    
     protected $createTemplates = true;
 
     public function tearnDown()
