@@ -1,0 +1,33 @@
+
+language: php
+
+php:
+  - 5.5.9
+  - 5.6
+  - 7.0
+
+env:
+  global:
+    -DB_DATABASE=components_html
+    -DB_USERNAME=travis
+    -DB_PASSWORD=
+
+sudo: false
+
+services:
+  - mysql
+
+before_script:
+  - mysql -e 'create database components_html;'
+
+install:
+  composer install
+
+script:
+  - php artisan migrate --env=testing --no-interaction -vvv
+  - php artisan db:seed --env=testing --no-interaction -vvv
+  - vendor/bin/phpunit
+  - php artisan migrate:rollback --env=testing --no-interaction -vvv
+
+matrix:
+  fast_finish: true
