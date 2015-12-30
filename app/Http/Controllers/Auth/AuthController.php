@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Forms\RegistrationForm;
 use App\User;
 use Illuminate\Http\Request;
 use Validator;
@@ -33,6 +34,12 @@ class AuthController extends Controller
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'getLogout']);
+    }
+
+    public function getRegister(RegistrationForm $form)
+    {
+        $form->model(new User());
+        return view('auth.register', compact('form'));
     }
 
     /**

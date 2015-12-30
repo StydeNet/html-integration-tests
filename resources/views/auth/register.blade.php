@@ -3,9 +3,15 @@
 @section('content')
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
-        <h1>@lang('auth.register_title')</h1>
+        <h1>Register</h1>
 
         {!! Alert::render() !!}
+
+        <h3>Form Model</h3>
+
+        {!! $form->render() !!}
+
+        <h3>Field Builder</h3>
 
         {!! Form::model(new App\User, [
             'url' => '/auth/register',
@@ -22,10 +28,11 @@
             {!! Field::checkboxes('interests', null, null, ['inline' => true]) !!}
 
             <button type="submit" class="btn btn-primary">
-                @trans('auth.register_action')
+                @lang('auth.register_action')
             </button>
 
         {!! Form::close() !!}
+
     </div>
 </div>
 @endsection
