@@ -22,10 +22,13 @@
             {!! Field::text('name') !!}
             {!! Field::email('email') !!}
             {!! Field::password('password') !!}
-            {!! Field::password('password_confirm', ['label' => 'Confirm your password']) !!}
-            {!! Field::radios('gender', null, 'm', ['inline' => true]) !!}
+            {{-- {!! Field::password('password_confirm', ['label' => 'Confirm your password']) !!} --}}
+            {!! Field::password('password_confirm')->label('Confirm your password') !!}
+            {{--!! Field::radios('gender', null, 'm', ['inline' => true]) !!--}}
+            {!! Field::radios('gender')->value('m')->inline() !!}
             {!! Field::select('profession_id') !!}
-            {!! Field::checkboxes('interests', null, null, ['inline' => true]) !!}
+            {{--!! Field::checkboxes('interests', null, null, ['inline' => true]) !!--}}
+            {!! Field::checkboxes('interests')->inline() !!}
 
             <button type="submit" class="btn btn-primary">
                 @lang('auth.register_action')
