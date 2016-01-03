@@ -4,10 +4,16 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
+    "repositories": [
+        {
+            "type":"path",
+            "url":"../html"
+        }
+    ],
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "~5.2.0",
-        "styde/html": "~1.1.0"
+        "styde/html": "dev-laravel5.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
