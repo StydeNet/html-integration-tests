@@ -13,15 +13,16 @@ class RegistrationForm extends Form
      */
     protected function setup($fields, $buttons)
     {
-        $this->method('POST');
-        $this->url('auth/register');
-        $this->attr('role', 'form');
+        $this->method('POST')
+            ->url('auth/register')
+            ->attr('role', 'form');
 
         $fields->text('name');
         $fields->email('email');
         $fields->password('password');
         $fields->password('password_confirm')->label('Confirm your password');
         $fields->radios('gender')->attr('inline');
+        $fields->selectMonth('month');
         $fields->select('profession_id');
         $fields->checkboxes('interests')->attr('inline');
 
