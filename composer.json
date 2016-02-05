@@ -6,8 +6,8 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "~1.1.0",
-        "styde/html": "dev-laravel5.2"
+        "laravel/framework": "~5.2.0",
+        "styde/html": "~1.1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
