@@ -7,6 +7,7 @@ php:
 
 env:
   global:
+    -DB_CONNECTION=mysql_tests
     -DB_DATABASE=components_html
     -DB_USERNAME=travis
     -DB_PASSWORD=
@@ -17,7 +18,7 @@ services:
   - mysql
 
 before_script:
-  - mysql -e 'create database components_html;'
+  - mysql -e 'create database components_html_tests;'
 
 install:
   composer install
