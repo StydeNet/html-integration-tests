@@ -22,5 +22,6 @@ Route::get('home', function() {
 $files = ['alert', 'auth'];
 
 foreach ($files as $file) {
-    require __DIR__ . "/routes/$file.php";
+    require __DIR__ . "/$file.php";
 }
+Auth::routes();

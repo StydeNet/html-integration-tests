@@ -17,19 +17,6 @@ class RouteServiceProvider extends ServiceProvider
     protected $namespace = 'App\Http\Controllers';
 
     /**
-     * Define your route model bindings, pattern filters, etc.
-     *
-     * @param  \Illuminate\Routing\Router  $router
-     * @return void
-     */
-    public function boot(Router $router)
-    {
-        //
-
-        parent::boot($router);
-    }
-
-    /**
      * Define the routes for the application.
      *
      * @param  \Illuminate\Routing\Router  $router
@@ -38,7 +25,7 @@ class RouteServiceProvider extends ServiceProvider
     public function map(Router $router)
     {
         $router->group(['namespace' => $this->namespace], function ($router) {
-            require app_path('Http/routes.php');
+            require base_path('routes/web.php');
         });
     }
 }
