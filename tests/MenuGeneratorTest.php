@@ -74,7 +74,9 @@ class MenuGeneratorTest extends TestCase
 
     function test_checks_for_access_using_the_access_handler_and_the_gate()
     {
-        Auth::loginUsingId(1);
+        $user = factory(\App\User::class)->create();
+
+        Auth::login($user);
 
         Gate::define('update-post', function ($user, Post $post) {
             return $post->id === 1;

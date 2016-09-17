@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password', 60);
             $table->enum('gender', ['m', 'f']);
-            $table->integer('profession_id')->unsigned();
+            $table->integer('profession_id')->unsigned()->nullable();
             $table->rememberToken();
             $table->timestamps();
 
