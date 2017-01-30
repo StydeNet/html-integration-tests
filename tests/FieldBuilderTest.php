@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\MessageBag;
+
 class FieldBuilderTest extends TestCase
 {
     public function test_generates_a_text_field()
@@ -49,9 +51,13 @@ class FieldBuilderTest extends TestCase
     public function test_generates_a_text_field_with_errors()
     {
         // Having
-        Field::setErrors([
+        $session = App::make('session.store');
+
+        $session->put('errors', new MessageBag([
             'name' => ['This is really wrong']
-        ]);
+        ]));
+
+        Field::setSessionStore($session);
 
         // Expect
         $this->assertTemplate(
