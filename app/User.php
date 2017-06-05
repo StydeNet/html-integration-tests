@@ -40,11 +40,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function getProfessionIdOptions()
     {
-        return Profession::lists('name', 'id')->toArray();
+        return Profession::pluck('name', 'id')->toArray();
     }
 
     public function getInterestsOptions()
     {
-        return Interest::lists('name', 'id')->toArray();
+        return Interest::pluck('name', 'id')->toArray();
     }
 }

@@ -51,10 +51,11 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
 
         $html = file_get_contents($template);
 
-        return $this->assertEquals(
-            $this->removeWhitespaces($html),
-            $this->removeWhitespaces($actual)
-        );
+        if ($this->removeWhitespaces($html) !== $this->removeWhitespaces($actual)) {
+            self::fail(
+                "The templates don't match, expected: \n\n{$html}\nActual: \n\n{$actual}"
+            );
+        }
     }
 
     protected function removeWhitespaces($string)

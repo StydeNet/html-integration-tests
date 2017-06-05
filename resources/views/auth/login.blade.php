@@ -7,20 +7,7 @@
 
         {!! Alert::render() !!}
 
-        {!! Form::open(['url' => 'auth/login', 'role' => 'form', 'method' => 'POST']) !!}
-
-            {!! Field::email('email') !!}
-            {!! Field::password('password') !!}
-            {!! Field::checkbox('remember_me') !!}
-
-            <button type="submit" class="btn btn-primary">
-                @lang('auth.login_action')
-            </button>
-            <a href="{{ url('password/email') }}">
-                @lang('auth.forgot_link')
-            </a>
-
-        {!! Form::close() !!}
+        {!! $form->render() !!}
     </div>
 </div>
 @endsection

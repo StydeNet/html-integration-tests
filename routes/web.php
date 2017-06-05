@@ -19,8 +19,10 @@ Route::get('home', function() {
     return view('home');
 });
 
-$files = ['alert', 'auth'];
+require __DIR__.'/alert.php';
 
-foreach ($files as $file) {
-    require __DIR__ . "/routes/$file.php";
-}
+require __DIR__.'/auth.php';
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

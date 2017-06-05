@@ -49,9 +49,9 @@ class FieldBuilderTest extends TestCase
     public function test_generates_a_text_field_with_errors()
     {
         // Having
-        Field::setErrors([
+        Session::flash('errors', collect([
             'name' => ['This is really wrong']
-        ]);
+        ]));
 
         // Expect
         $this->assertTemplate(
