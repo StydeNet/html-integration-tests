@@ -11,7 +11,7 @@ env:
     -DB_HOST=127.0.0.1
     -DB_CONNECTION=mysql_tests
     -DB_DATABASE=components_html
-    -DB_USERNAME=travis
+    -DB_USERNAME=root
     -DB_PASSWORD=
 
 sudo: false
