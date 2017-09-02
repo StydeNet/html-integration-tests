@@ -28,6 +28,14 @@ class FormBuilderTest extends TestCase
         );
     }
 
+    function test_generate_radios_with_numeric_values()
+    {
+        $this->assertTemplate(
+            'forms/radios-numeric',
+            Form::radios('visible', [1 => 'Yes', 0 => 'No'], 1)
+        );
+    }
+
     function test_generate_checkboxes()
     {
         // Having
