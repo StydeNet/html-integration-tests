@@ -2,7 +2,6 @@
 
 class FormBuilderTest extends TestCase
 {
-
     function test_adds_a_novalidate_option()
     {
         // Having
@@ -22,10 +21,9 @@ class FormBuilderTest extends TestCase
 
     function test_generate_radios()
     {
-        $this->assertTemplate(
-            'forms/radios',
-            Form::radios('gender', ['m' => 'Male', 'f' => 'Female'], 'm')
-        );
+        $html = Form::radios('gender', ['m' => 'Male', 'f' => 'Female'], 'm');
+
+        $this->assertTemplate('forms/radios', $html);
     }
 
     function test_generate_checkboxes()

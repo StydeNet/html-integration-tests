@@ -42,20 +42,23 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
             if ($this->createTemplates) {
                 file_put_contents($template, $actual);
             } else {
-                $this->assertTrue(false, "Template: $template does not exist");
+                $this->fail("Template: $template does not exist");
             }
 
             return;
 
         }
 
-        $html = file_get_contents($template);
+        $expected = file_get_contents($template);
 
-        if ($this->removeWhitespaces($html) !== $this->removeWhitespaces($actual)) {
-            self::fail(
-                "The templates don't match, expected: \n\n{$html}\nActual: \n\n{$actual}"
-            );
+        if (is_object($actual)) {
+            $actual = (string) $actual;
         }
+
+        $this->assertTrue(
+            $this->removeWhitespaces($expected) === $this->removeWhitespaces($actual),
+            "The templates don't match, expected: \n\n{$expected}\nActual: \n\n{$actual}"
+        );
     }
 
     protected function removeWhitespaces($string)
