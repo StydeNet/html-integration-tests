@@ -8,6 +8,7 @@ php:
 
 env:
   global:
+    -DB_HOST=127.0.0.1
     -DB_CONNECTION=mysql_tests
     -DB_DATABASE=components_html
     -DB_USERNAME=travis
