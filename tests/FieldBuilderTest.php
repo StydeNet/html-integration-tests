@@ -12,6 +12,14 @@ class FieldBuilderTest extends TestCase
         );
     }
 
+    public function test_generates_a_text_field_with_a_required_label()
+    {
+        $this->assertTemplate(
+            'fields/text-required',
+            Field::text('name', ['required' => true])
+        );
+    }
+
     public function test_generates_a_text_field_with_abbreviated_options()
     {
         // Having

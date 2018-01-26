@@ -43,10 +43,10 @@ class MenuGeneratorTest extends TestCase
 
     function test_implements_routes_with_dynamic_parameters()
     {
-        Route::get('account', ['as' => 'account']);
-        Route::get('calendar', ['as' => 'calendar']);
-
         // Having
+        Route::get('account/{user_id}', ['as' => 'account']);
+        Route::get('calendar/{year}/{month}/{day}', ['as' => 'calendar']);
+
         $user_id = 20;
         $year = 2015;
         $month = 07;

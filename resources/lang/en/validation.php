@@ -108,7 +108,7 @@ return [
     ],
 
     'empty_option' => [
-        'default'       => 'Select something please',
+        'default'       => 'Select a value',
         'profession_id' => 'Select your profession'
     ]
 

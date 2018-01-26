@@ -141,6 +141,7 @@ return [
          * Vendor Service Providers
          */
         Styde\Html\HtmlServiceProvider::class,
+        App\Providers\ViewServiceProvider::class,
 
         /*
          * Application Service Providers...
