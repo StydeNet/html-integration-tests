@@ -6,13 +6,10 @@
     "type": "project",
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "repositories": [
-        { "type": "path", "url": "../styde-html" }
-    ],
     "require": {
         "php": ">=7.0",
-        "laravel/framework": "~5.4.0",
-        "styde/html": "*"
+        "laravel/framework": "~5.5.0",
+        "styde/html": "dev-develop"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
