@@ -1,17 +1,14 @@
-@extends('layouts.bootstrap')
+@extends($layout)
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+    <div class="container">
+        @component($rowComponent)
+            {!! Alert::render() !!}
+            @component($panelComponent)
 
-                <div class="panel-body">
-                    You are logged in!
-                </div>
-            </div>
-        </div>
+                @slot('header', 'Dashboard')
+                You are logged in!
+            @endcomponent
+        @endcomponent
     </div>
-</div>
 @endsection

@@ -1,9 +1,10 @@
-@extends('layout')
+@extends($layout)
 
 @section('content')
-<div class="row">
-    <div class="col-md-6 col-md-offset-3">
-        <h1>@lang('auth.reminder_title')</h1>
+    <div class="container">
+        @component($rowComponent)
+            @component($panelComponent)
+                @slot('header', __('Reset Password'))
 
         {!! Alert::render() !!}
 
@@ -11,9 +12,9 @@
 
             {!! Field::email('email') !!}
 
-            <button type="submit" class="btn btn-primary">
-                @trans('auth.reminder_action')
-            </button>
+            @component($submitGroup)
+                {!! Form::submit(__('Send Password Reset Link'), ['class' => $submitClasses]) !!}
+            @endcomponent
 
         {!! Form::close() !!}
     </div>
