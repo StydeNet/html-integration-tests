@@ -19,7 +19,7 @@ Route::get('home', function() {
     return view('home');
 });
 
-$files = ['alert', 'auth'];
+$files = ['alert', 'forms'];
 
 foreach ($files as $file) {
     require __DIR__ . "/$file.php";

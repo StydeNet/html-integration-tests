@@ -34,7 +34,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
 
     protected function assertTemplate($template, $actual)
     {
-        $theme = Config::get('html.theme', 'bootstrap');
+        $theme = Config::get('html.theme', 'bootstrap4');
         $template = __DIR__ . "/expectations/$theme/$template.html";
 
         if ( ! file_exists($template)) {
