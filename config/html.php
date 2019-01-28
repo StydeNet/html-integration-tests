@@ -113,5 +113,38 @@ return [
                 'submit' => 'btn btn-primary',
             ],
         ],
+        /**
+         * Configuration for Bulma Css
+         */
+        'bulma' => [
+            'panel-component' => 'card',
+            
+            /*
+             * Set a specific HTML template for a field type if the
+             * type is not set, the default template will be used
+             */
+            'field_templates' => [
+                // type => template
+                'checkbox' => 'checkbox',
+                'checkboxes' => 'collections',
+                'radios' => 'collections',
+                'select'=>'selects',
+
+            ],
+            /*
+             * Set the default classes for each field type
+             */
+            'field_classes' => [
+                // type => class or classes
+                'textarea'=>'textarea',
+                'default' => 'input',
+                'checkbox' => 'checkbox',
+                'error' => 'is-danger'
+            ],
+            'other_classes' => [
+                'link' => "button is-text",
+                'submit' => 'button is-primary',
+            ],
+        ]
     ]
 ];

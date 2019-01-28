@@ -2069,16 +2069,16 @@
         },
         {
             "name": "styde/html",
-            "version": "1.6.0",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/StydeNet/html.git",
-                "reference": "5c7c3997d92eeb8bc2d3c68af9e28b0825ac353a"
+                "reference": "31ff7f14390407bc711738537e241d99fe311f2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StydeNet/html/zipball/5c7c3997d92eeb8bc2d3c68af9e28b0825ac353a",
-                "reference": "5c7c3997d92eeb8bc2d3c68af9e28b0825ac353a",
+                "url": "https://api.github.com/repos/StydeNet/html/zipball/31ff7f14390407bc711738537e241d99fe311f2b",
+                "reference": "31ff7f14390407bc711738537e241d99fe311f2b",
                 "shasum": ""
             },
             "require": {
@@ -2126,7 +2126,7 @@
                 }
             ],
             "description": "Build form fields, menus, alert messages and other view components quickly",
-            "time": "2018-09-10T13:40:57+00:00"
+            "time": "2019-01-28T15:29:27+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -4509,16 +4509,16 @@
         },
         {
             "name": "sebastian/environment",
-            "version": "4.0.1",
+            "version": "4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "febd209a219cea7b56ad799b30ebbea34b71eb8f"
+                "reference": "4a43e9af57b4afa663077b9bc85255dbc6e8a2bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/febd209a219cea7b56ad799b30ebbea34b71eb8f",
-                "reference": "febd209a219cea7b56ad799b30ebbea34b71eb8f",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/4a43e9af57b4afa663077b9bc85255dbc6e8a2bd",
+                "reference": "4a43e9af57b4afa663077b9bc85255dbc6e8a2bd",
                 "shasum": ""
             },
             "require": {
@@ -4555,7 +4555,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2018-11-25T09:31:21+00:00"
+            "time": "2019-01-28T15:26:03+00:00"
         },
         {
             "name": "sebastian/exporter",

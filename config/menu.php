@@ -5,6 +5,7 @@ return [
         'home' => [
             'title' => 'Home',
             'url' => '/home',
+            'logged' => true,
         ],
         'alert' => [
             'title' => 'Alerts',

@@ -5,23 +5,31 @@
     <div class="container">
         @component($rowComponent)
 
-        @component($panelComponent)
+            @component($panelComponent)
 
-            @slot('header', 'Form A')
-            {!! Form::open(['url' => 'form-a', 'method' => 'POST'])!!}
-            {!! Field::text('name', ['required' => true]) !!}
-                {!! Field::text('last_name', 'Liberio', ['required', 'disabled']) !!}
+                @slot('header', 'Form A')
 
-            {!! Field::file('avatar') !!}
-                {!! Field::textarea('description') !!}
-                {!! Field::select('age',[18 => '18']) !!}
-                {!! Field::radios('status', ['a' => 'Active', 'i' => 'Inactive']) !!}
+                {!! Form::open(['url' => 'form-a', 'method' => 'POST'])!!}
 
-                   @php $tags = [
-                    'php' => 'PHP',
-                    'python' => 'Python',
-                    'js' => 'JS',
-                    'ruby' => 'Ruby on Rails'
+                    {!! Field::text('name', ['required' => true]) !!}
+
+                    {!! Field::text('last_name', 'Liberio', ['required', 'disabled']) !!}
+
+                    {!! Field::time('at') !!}
+
+                    {!! Field::file('avatar') !!}
+
+                    {!! Field::textarea('description') !!}
+
+                    {!! Field::select('age',[18 => '18']) !!}
+
+                    {!! Field::radios('status', ['a' => 'Active', 'i' => 'Inactive']) !!}
+
+                    @php $tags = [
+                        'php' => 'PHP',
+                        'python' => 'Python',
+                        'js' => 'JS',
+                        'ruby' => 'Ruby on Rails'
                     ];
 
                     $checked = ['php', 'js']; @endphp
@@ -32,8 +40,8 @@
                         {!! Form::submit('Send', ['class' => $submitClasses]) !!}
                     @endcomponent
 
-            {!! Form::close()!!}
-        @endcomponent
+                {!! Form::close()!!}
+            @endcomponent
     @endcomponent
     </div>
 @endsection
