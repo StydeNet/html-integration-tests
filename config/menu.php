@@ -4,7 +4,8 @@ return [
     'main' => [
         'home' => [
             'title' => 'Home',
-            'url' => '/',
+            'url' => '/home',
+            'logged' => true,
         ],
         'alert' => [
             'title' => 'Alerts',
@@ -30,13 +31,26 @@ return [
                 ],
             ]
         ],
-        'login' => [
-            'url' => '/login',
-            'logged' => false,
+        'forms' => [
+            'title' => 'Forms',
+            'submenu' => [
+                'Login form' => [
+                    'url' => '/login',
+                    'logged' => false,
+                ],
+                'Register form' => [
+                    'url' => '/register',
+                    'logged' => false,
+                ],
+                'form A' => [
+                    'url' => '/form-a',
+                ],
+
+                'form B' => [
+                    'url' => '/form-b',
+                ],
+            ],
         ],
-        'register' => [
-            'url' => '/register',
-            'logged' => false,
-        ],
+        'contact-us' => [],
     ]
 ];

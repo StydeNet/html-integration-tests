@@ -4,6 +4,9 @@ Route::group(['prefix' => 'alert/'], function () {
 
     Route::get('success', function () {
         Alert::success('The facade works!');
+        Alert::message('This is good!', 'success') ;
+        Alert::success('Some information')->details('A detailed description goes here.');
+        Alert::success()->view('partials.custom-alert');
         return view('alert');
     });
 
@@ -47,5 +50,4 @@ Route::group(['prefix' => 'alert/'], function () {
         alert('Redirect successful!');
         return view('alert');
     });
-
 });

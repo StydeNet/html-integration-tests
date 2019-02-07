@@ -1,51 +1,80 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <title>Laravel</title>
 
-        <link href="//fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
+        <!-- Styles -->
         <style>
             html, body {
-                height: 100%;
-            }
-
-            body {
+                background-color: #fff;
+                color: #636b6f;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 200;
+                height: 100vh;
                 margin: 0;
-                padding: 0;
-                width: 100%;
-                color: #B0BEC5;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
             }
 
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
+            .full-height {
+                height: 100vh;
+            }
+
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .position-ref {
+                position: relative;
+            }
+
+            .top-right {
+                position: absolute;
+                right: 10px;
+                top: 18px;
             }
 
             .content {
                 text-align: center;
-                display: inline-block;
             }
 
             .title {
-                font-size: 96px;
-                margin-bottom: 40px;
+                font-size: 84px;
             }
 
-            .quote {
-                font-size: 24px;
+            .links > a {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            .m-b-md {
+                margin-bottom: 30px;
             }
         </style>
     </head>
     <body>
-        <div class="container">
+        <div class="flex-center position-ref full-height">
             <div class="content">
-                <div class="title">Laravel 5</div>
-                <div class="quote">{{ Inspiring::quote() }}</div>
+                <div class="title m-b-md">
+                    Styde HTML
+                </div>
+                <p class="m-b-md">
+                    First configure the theme in config/html.php and later go to <a href={{ url('alert/all') }}>See examples</a>.
+                </p>
+                <p class="m-b-md">
+                    Also, you can change the menu items in config/menu.php.
+                </p>
             </div>
         </div>
     </body>

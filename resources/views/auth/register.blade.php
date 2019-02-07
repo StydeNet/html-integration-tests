@@ -1,13 +1,11 @@
 @extends($layout)
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+    <div class="container">
+        @component($rowComponent)
             @component($panelComponent)
                 @slot('header', 'Sign up')
                 {{ Form::open(['url' => 'register', 'method' => 'POST']) }}
-                    {{ csrf_field() }}
 
                     {!! Field::text('name', ['required']) !!}
 
@@ -19,16 +17,13 @@
 
                     {!! Field::radios('status', ['a' => 'Active', 'i' => 'Inactive']) !!}
 
-                    {!! Field::checkbox('terms', 'Acepto los terminos y condiciones de uso') !!}
-
-                    <br>
-
-                    <button type="submit" class="btn btn-primary">
-                        Register
-                    </button>
+                    {!! Field::checkbox('terms', 1, ['label' => 'I agree to the terms and conditions.']) !!}
+                    @component($submitGroup)
+                        {!! Form::submit(__('Register'), ['class' => $submitClasses]) !!}
+                    @endcomponent
                 {{ Form::close() }}
             @endcomponent
-        </div>
+         @endcomponent
     </div>
-</div>
 @endsection
+
