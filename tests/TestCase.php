@@ -1,9 +1,12 @@
 <?php
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Mockery as m;
 
 class TestCase extends Illuminate\Foundation\Testing\TestCase
 {
+    use RefreshDatabase;
+
     /**
      * The base URL to use while testing the application.
      *
